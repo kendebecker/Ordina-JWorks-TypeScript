@@ -15,7 +15,7 @@ class Book extends Item{
             "<h3>" + this._title + "</h3>" +
             "<p>" + this._genre + "</p>" +
             "<p>" + this._author._name + "</p>" +
-            "<span>" + this._description+ "</span>"+
+            "<span>" + this._description+ "</span>";
 
 
         element.appendChild(article);
