@@ -15,4 +15,11 @@ class Book extends Item {
 
         element.appendChild(article);
     }
+
+    static fromJSON(data : any) : Book{
+        let jsonObj = JSON.parse(data);
+        for (var propName in jsonObj) {
+            this[propName] = jsonObj[propName]
+        }
+    }
 }

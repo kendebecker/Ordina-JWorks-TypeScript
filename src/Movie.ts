@@ -18,8 +18,20 @@ class Movie extends Item implements Rating{
         article.innerHTML =
             "<h3>" + this.title + "</h3>" +
             "<p>" + this.genre + " "+ this.name +" "+this.age+ "</p>" +
-            "<span>" + this.description + "</span>";
+            "<span>" + this.description + "</span>"+
+            "<p>"+ this.age +"</p>"+
+            "<p>"+ this.name+"</p>";
+
 
         element.appendChild(article);
+    }
+
+    static fromJSON(data : any) : Movie{
+        let jsonObj = JSON.parse(data);
+        jsonObj.
+        for (let propName in jsonObj) {
+            this[propName] = jsonObj[propName]
+        }
+        return new Movie();
     }
 }

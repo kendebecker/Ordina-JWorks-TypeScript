@@ -1,4 +1,4 @@
-class Library {
+/*class Library {
     items:Array<Item> = [];
 
     constructor(){
@@ -18,5 +18,28 @@ class Library {
 
         let itemContainer: HTMLElement = document.getElementById("items");
         this.items.forEach(item => item.render(itemContainer));
+    }
+}*/
+class Library{
+    books : Array<Book>= [];
+    movies : Array<Movie> = [];
+    items:Array<Item> = [];
+
+    constructor(books : Array<Book>,movies :Array<Movie>){
+        this.books = books;
+        this.movies = movies;
+    }
+
+    static fromJSON(data: any) : Library {
+
+
+
+        return null
+    }
+
+    getAll(): Array<Item>{
+        this.books.forEach(book => this.items.push(book));
+        this.movies.forEach(movie => this.items.push(movie));
+        return this.items;
     }
 }
