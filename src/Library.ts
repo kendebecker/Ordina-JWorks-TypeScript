@@ -21,8 +21,8 @@
     }
 }*/
 class Library{
-    books : Array<Book>= [];
-    movies : Array<Movie> = [];
+    books : Array<Book>;
+    movies : Array<Movie>;
     items:Array<Item> = [];
 
     constructor(books : Array<Book>,movies :Array<Movie>){
@@ -31,10 +31,10 @@ class Library{
     }
 
     static fromJSON(data: any) : Library {
+        let books: Array<Book> = data.books.map(val => Book.fromJSON(val));
+        let movies: Array<Movie> = data.movies.map(val => Movie.fromJSON(val));
 
-
-
-        return null
+        return new Library(books,movies);
     }
 
     getAll(): Array<Item>{
@@ -43,3 +43,14 @@ class Library{
         return this.items;
     }
 }
+
+/*
+constructor(public books: Array<Book>,public movies:Array<Movie>){
+
+}*/
+
+/*
+getAll(): Array<Item> {
+    this.items = (<Item[]>this.books).concat(this.movies);
+return this.items;
+}*/
