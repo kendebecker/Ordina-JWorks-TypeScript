@@ -1,4 +1,4 @@
-function publishItems(title:string,genre:string,description:string) : void {
+/*function publishItems(title:string,genre:string,description:string) : void {
 
     let article: HTMLElement = document.createElement("article")
     article.innerHTML =
@@ -13,4 +13,8 @@ function publishItems(title:string,genre:string,description:string) : void {
 
 publishItems("Matrix","Thriller","Did you know, Neo is the one?");
 
-publishItems("Moby Dick","Drama","Is this fish for real?");
+publishItems("Moby Dick","Drama","Is this fish for real?");*/
+
+let library : Library = new Library();
+let htmlElement : HTMLElement = document.getElementById("items");
+library.outputToHTML(htmlElement);
