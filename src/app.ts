@@ -15,6 +15,6 @@ publishItems("Matrix","Thriller","Did you know, Neo is the one?");
 
 publishItems("Moby Dick","Drama","Is this fish for real?");*/
 
-let library : Library = new Library();
-let htmlElement : HTMLElement = document.getElementById("items");
-library.outputToHTML(htmlElement);
+
+let library : Library = new  Library();
+library.outputToHTML();
