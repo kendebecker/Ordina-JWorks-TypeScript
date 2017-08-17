@@ -17,11 +17,13 @@ class Library {
         return this.items;
     }
     addMovie(elementID : string):void{
+        this.items=[];
         this.items.push(new Movie("some movie","horror","dont look behind you",18,"Adults only"));
         let element : HTMLElement = document.getElementById(elementID);
         this.items.forEach(value => value.render(element));
     }
     addBook(elementID : string):void{
+        this.items=[];
         this.items.push(new Book("some book",new Author("some guy"),"drama","guaranteed bestseller"));
         let element : HTMLElement = document.getElementById(elementID);
         this.items.forEach(value => value.render(element));
