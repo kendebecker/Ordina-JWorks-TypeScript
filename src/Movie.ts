@@ -27,11 +27,6 @@ class Movie extends Item implements Rating{
     }
 
     static fromJSON(data : any) : Movie{
-        let jsonObj = JSON.parse(data);
-        jsonObj.
-        for (let propName in jsonObj) {
-            this[propName] = jsonObj[propName]
-        }
-        return new Movie();
+        return new Movie(data.title,data.genre,data.description,data.age,data.name);
     }
 }

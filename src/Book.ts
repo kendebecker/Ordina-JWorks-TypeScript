@@ -17,9 +17,6 @@ class Book extends Item {
     }
 
     static fromJSON(data : any) : Book{
-        let jsonObj = JSON.parse(data);
-        for (var propName in jsonObj) {
-            this[propName] = jsonObj[propName]
-        }
+        return new Book(data.title,new Author(data.author),data.genre,data.description);
     }
 }
