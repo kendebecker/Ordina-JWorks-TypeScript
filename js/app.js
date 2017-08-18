@@ -1,11 +1,8 @@
-function publishItems(title, genre, description) {
-    var article = document.createElement("article");
-    article.innerHTML =
-        "<h3>" + title + "</h3>" +
-            "<p>" + genre + "</p>" +
-            "<span>" + description + "</span>";
-    document.getElementById("items").appendChild(article);
-}
-publishItems("Matrix", "Thriller", "Did you know, Neo is the one?");
-publishItems("Moby Dick", "Drama", "Is this fish for real?");
+var jsonParser = new JSONParser();
+var library = new Library(null, null);
+jsonParser.getJSON("items.json", function (data) {
+    library = Library.fromJSON(data);
+    var itemContainer = document.getElementById("items");
+    library.getAll().forEach(function (item) { return item.render(itemContainer); });
+});
 //# sourceMappingURL=app.js.map

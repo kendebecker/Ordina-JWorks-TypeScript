@@ -1,7 +1,7 @@
 class JSONParser{
 
     getJSON(uri:string, fn: (data: any) => void): void {
-        var request = new XMLHttpRequest();
+        let request = new XMLHttpRequest();
         request.open('GET', uri, true);
 
         request.onload = function() {
